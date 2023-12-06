@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    #modal1 {
+      border: 3px solid rgb(34, 42, 49);
+      background-color: lightslategray;
+    }
+    #modal2 {
+      border: 3px solid rgb(33, 54, 33);
+      background-color: lightgreen;
+    }
+    #modal3 {
+      border: 3px solid rgb(133, 35, 50);
+      background-color: lightpink;
+    }
+    #modal1,
+    #modal2,
+    #modal3 {
+      width: 50%;
+      height: 200px;
+      border-radius: 20px;
+      padding: 30px 10px;
+      text-align: center;
+      position: fixed;
+      left: 25%;
+      top: -300px;
+      transition: 1s;
+    }
+    li {
+      border: 1px solid rgb(31, 28, 28);
+      border-radius: 50%;
+      font-size: 20px;
+      list-style: none;
+      width: 20px;
+      height: 20px;
+    }
+    ul {
+      display: flex;
+      justify-content: space-around;
+    }
+  </style>
+  <body>
+    <div>
+      <button onclick="login()" style="padding: 2px 20px">login</button>
+    </div>
+
+    <div style="width: 50%; margin: 10px auto; text-align: center">
+      <ul>
+        <li id="li1"></li>
+        <li id="li2"></li>
+        <li id="li3"></li>
+      </ul>
+    </div>
+
+    <div id="modal1">
+      <div>
+        <label for="name">enter your name:</label>
+        <input type="text" id="name" />
+      </div>
+      <br />
+      <div>
+        <label for="phone">enter your phone :</label>
+        <input type="text" id="phone" />
+      </div>
+      <div>
+        <div style="height: 100px"></div>
+        <button style="padding: 2px 20px" onclick="showModal2()">next</button>
+      </div>
+    </div>
+    <div id="modal2">
+      <div>
+        <label for="name">enter your address:</label>
+        <input type="text" id="name" />
+      </div>
+      <br />
+      <div>
+        <label for="phone">enter your email :</label>
+        <input type="text" id="phone" />
+      </div>
+      <div>
+        <div style="height: 100px"></div>
+        <button style="padding: 2px 20px" onclick="showModal3()">next</button>
+      </div>
+    </div>
+    <div id="modal3">
+      <div>
+        <label for="name">enter your mother name:</label>
+        <input type="text" id="name" />
+      </div>
+      <br />
+      <div>
+        <label for="phone">enter your fother name :</label>
+        <input type="text" id="phone" />
+      </div>
+      <div>
+        <div style="height: 100px"></div>
+        <button style="padding: 2px 20px" onclick="finish()">finish</button>
+      </div>
+    </div>
+    <script>
+      function login() {
+        document.getElementById("modal1").style.top = "100px";
+      }
+      let showModal2 = () => {
+        document.getElementById("modal1").style.display = "none";
+        document.getElementById("modal2").style.top = "100px";
+        document.getElementById("li1").style.backgroundColor = "green";
+      };
+      let showModal3 = () => {
+        document.getElementById("modal2").style.display = "none";
+        document.getElementById("modal3").style.top = "100px";
+        document.getElementById("li2").style.backgroundColor = "green";
+      };
+      let finish = () => {
+        document.getElementById("modal3").style.display = "none";
+        document.getElementById("li3").style.backgroundColor = "green";
+      };
+    </script>
+  </body>
+</html>
